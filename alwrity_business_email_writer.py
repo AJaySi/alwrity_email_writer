@@ -14,7 +14,7 @@ import google.generativeai as genai
 def main():
     # Set page configuration
     st.set_page_config(
-        page_title="Alwrity - AI Email Writer (Beta)",
+        page_title="Alwrity - AI Business Email Writer (Beta)",
         layout="wide",
     )
     # Remove the extra spaces from margin top.
@@ -55,7 +55,7 @@ def main():
     st.markdown(hide_streamlit_footer, unsafe_allow_html=True)
 
     # Title and description
-    st.title("✍️ Alwrity - AI News Report Generator(Beta)")
+    st.title("✍️ Alwrity - AI Business Email Writer (Beta)")
 
 
     with st.expander("**PRO-TIP** - Read the instructions below.", expanded=True):
