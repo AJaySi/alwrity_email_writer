@@ -86,7 +86,7 @@ def main():
                 else:
                     response = sales_pitch_writer(product_service_name, target_audience, status)
                     if response:
-                        st.subheader(f'**🧕🔬👩 Alwrity can make mistakes. Your Final Email for Sales Pitch!**')
+                        st.subheader(f'**🧕 Alwrity can make mistakes. Your Final Email for Sales Pitch!**')
                         st.write(response)
                     else:
                         st.write("💥**Failed to write Email. Please try again!**")
@@ -96,7 +96,7 @@ def main():
                 else:
                     response = customer_service_writer(issue_description, status)
                     if response:
-                        st.subheader(f'**🧕🔬👩 Alwrity can make mistakes. Your Final Email for Customer Service!**')
+                        st.subheader(f'**🧕 Alwrity can make mistakes. Your Final Email for Customer Service!**')
                         st.write(response)
                     else:
                         st.write("💥**Failed to write Email. Please try again!**") 
@@ -106,8 +106,9 @@ def main():
                 else:
                     response = partnership_proposal_writer(partner_company_name, collaboration_objective, status)
                     if response:
-                        st.subheader(f'**🧕🔬👩 Alwrity can make mistakes. Your Final Email for Partnership Proposal!**')
+                        st.subheader(f'**🧕 Alwrity can make mistakes. Your Final Email for Partnership Proposal!**')
                         st.write(response)
+                        st.write("\n\n\n")
                     else:
                         st.write("💥**Failed to write Email. Please try again!**")
             elif email_type == "Project Update":
@@ -116,7 +117,7 @@ def main():
                 else:
                     response = project_update_writer(project_name, key_achievements, status)
                     if response:
-                        st.subheader(f'**🧕🔬👩 Alwrity can make mistakes. Your Final Email for Project update!**')
+                        st.subheader(f'**🧕 Alwrity can make mistakes. Your Final Email for Project update!**')
                         st.write(response)
                     else:
                         st.write("💥**Failed to write Email. Please try again!**")
@@ -173,11 +174,11 @@ def partnership_proposal_writer(partner_company_name, collaboration_objective, s
     """ Email partnership_proposal_writer"""
 
     prompt = f"""
-        **Subject:** Partnership Proposal: Collaboration between [company_name] and {partner_company_name}
+        **Subject:** Partnership Proposal: Collaboration between [Your_Company] and {partner_company_name}
 
         **Body:**
 
-        We are writing to propose a partnership between our companies, {company_name} and {partner_company_name}. 
+        We are writing to propose a partnership between our companies, [Your_Company] and {partner_company_name}. 
         We believe that a collaboration would be mutually beneficial for the following reasons: 
 
         {collaboration_objective}
@@ -278,32 +279,6 @@ def generate_text_with_exception_handling(prompt):
         st.exception(f"An unexpected error occurred: {e}")
         return None
 
-
-def get_language_name(language_code):
-    languages = {
-            "Spanish": "es",
-            "Vietnamese": "vn",
-            "English": "en",
-            "Arabic": "ar",
-            "Hindi": "hi",
-            "German": "de",
-            "Chinese (Simplified)": "zh-cn"
-        # Add more language codes and corresponding names as needed
-    }
-    return languages.get(language_code, "Unknown")
-
-
-def get_country_name(country_code):
-    countries = {
-            "Spain": "es",
-            "Vietnam": "vn",
-            "Pakistan": "pk",
-            "India": "in",
-            "Germany": "de",
-            "China": "cn"
-        # Add more country codes and corresponding names as needed
-        }
-    return countries.get(country_code, "Unknown")
 
 
 if __name__ == "__main__":
