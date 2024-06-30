@@ -26,26 +26,29 @@ def main():
                     padding-left: 1rem;
                     padding-right: 1rem;
                 }
-        </style>
-        """, unsafe_allow_html=True)
-    st.markdown(f"""
-      <style>
-      [class="st-emotion-cache-7ym5gk ef3psqc12"]{{
-            display: inline-block;
-            padding: 5px 20px;
-            background-color: #4681f4;
-            color: #FBFFFF;
-            width: 300px;
-            height: 35px;
+                 div.stButton > button:first-child {
+            background: #1565C0;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
             text-align: center;
             text-decoration: none;
+            display: inline-block;
             font-size: 16px;
-            border-radius: 8px;’
-      }}
-      </style>
-    """
-    , unsafe_allow_html=True)
+            margin: 10px 2px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+        }
 
+        div.stButton > button:hover:first-child {
+            background-color: #1976A2;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+        </style>
+        """, unsafe_allow_html=True)
     # Hide top header line
     hide_decoration_bar_style = '<style>header {visibility: hidden;}</style>'
     st.markdown(hide_decoration_bar_style, unsafe_allow_html=True)
